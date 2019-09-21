@@ -7,6 +7,7 @@ public class Decrypt {
 	public static void main(String[] args) {
 		
 		Scanner scnr = new Scanner(System.in);
+		
 		int passWord = 0;
 		System.out.println ("Enter 4 digit password to decrypt:");
 		passWord = scnr.nextInt();
