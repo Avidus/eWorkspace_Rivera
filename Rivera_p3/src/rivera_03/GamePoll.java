@@ -49,12 +49,47 @@ public class GamePoll {
 			}
 			genreSumStored[i] = genreSum;//genreSum stored in an array before being reset//
 			genreAverage = genreSum/pollUser;//genreAverage calculated before being displayed and before genreSum is later reset//
-			
-			System.out.print("Average: " + genreAverage);
-			System.out.print("\n");
-			
+			String formatAverage = String.format("%.2f", genreAverage);
+			System.out.println("\tAverage: " + formatAverage);	
 		}
-	
+		//Compare scores to determine which was the most liked//
+				int k;
+				if (genreSumStored[0] > genreSumStored[1]) {
+					k = 0;
+				}
+				else {
+					k = 1;
+				}
+				if (genreSumStored[2] > genreSumStored[k]) {
+					k = 2;
+				}
+				if(genreSumStored[3] > genreSumStored[k]) {
+					k = 3;
+				}
+				if(genreSumStored[4] > genreSumStored[k]) {
+					k = 4;	
+				}
+				
+				System.out.println(gameGenre[k]+ " was rated the most popular with a score of: " + genreSumStored[k]);
+				
+				//Compare scores to determine which was the least liked//
+				if (genreSumStored[0] < genreSumStored[1]) {
+					k = 0;
+				}
+				else {
+					k = 1;
+				}
+				if (genreSumStored[2] < genreSumStored[k]) {
+					k = 2;
+				}
+				if(genreSumStored[3] < genreSumStored[k]) {
+					k = 3;
+				}
+				if(genreSumStored[4] < genreSumStored[k]) {
+					k = 4;	
+				}
+				
+				System.out.println(gameGenre[k]+ " was rated the least popular with a score of: " + genreSumStored[k]);
 
 }
 }
